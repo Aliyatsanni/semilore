@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanni Aliyat Semilore | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Sanni Aliyat Semilore's portfolio. Front-End Developer skilled in HTML, CSS, JavaScript. I create responsive, user-friendly websites.">
+    <meta name="keywords"
+        content="Aliyat, Front-End Developer, HTML, CSS, JavaScript, Web Developer, Portfolio, Nigeria">
+    <meta name="author" content="Sanni Aliyat Semilore">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sanni Aliyat Semilore | Front-End Developer">
+    <meta property="og:description"
+        content="Explore my portfolio as a front-end web developer. I design and develop modern, responsive websites.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio-link.com">
+    <meta property="og:image" content="https://via.placeholder.com/600x400.png?text=Aliyat+Portfolio">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://via.placeholder.com/32x32.png?text=A" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="welcome-text">Welcome to my portfolio website...!!!</div>
+    </div>
+
+    <!-- Navigation -->
+
+    <!-- Header with Responsive Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <h1 class="logo">Aliyat's portfolio</h1>
+            <div class="hamburger" id="hamburger">☰</div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+
+
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+
+
+
+    </header>
+
+
+
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero" data-aos="fade-in">
+        <div class="container">
+            <h1> Hello, I'm <span class="name-highlight">Aliyat Semilore</span></h1>
+            <h2><span id="typed-text"></span><span class="cursor">|</span></h2>
+            <img src="./assets/semilore.jpg" alt="Aliyat's photo"
+                style="width:150px; border-radius:50%; margin: 20px 0;">
+            <p>Front-End Web Developer</p>
+            <p>Creating responsive and clean websites using HTML, CSS, and JavaScript</p>
+            <a href="aliyat-resume.pdf" download>
+                <button style="margin-top: 20px;">Download Cv</button>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Spacer to make room for fixed hero -->
+    <div class="spacer"></div>
+
+    <!-- About Me -->
+    <section id="about" class="about" data-aos="fade-up">
+        <div class="about-content">
+            <h2 class="section-title">About Me</h2>
+            <h3>Hi, I'm Sanni Aliyat Semilore</h3>
+            <p>
+                I’m a passionate Front-End Web Developer with a focus on crafting clean, responsive, and user-friendly
+                interfaces using HTML, CSS, and JavaScript. I love bringing ideas to life in the browser and continually
+                strive to improve my skills while building meaningful web experiences.
+            </p>
+            <p>
+                My goal is to deliver visually appealing and functional websites that not only look great but also
+                perform well across all devices. Whether it’s a personal blog or a business landing page, I approach
+                every project with dedication, professionalism, and creativity.
+            </p>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+        <h2>Connect with Me</h2>
+        <p>Follow me for updates and tech tips!</p>
+        <div class="social-icons">
+            <a href="https://wa.me/2348160189247" target="_blank" title="Chat on WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://www.tiktok.com/@itz.wunmi8" target="_blank" title="Follow me on TikTok">
+                <img src="./assets/pngwing.com.png" alt="TikTok">
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-content">
+
+                <div>
+                    HTML
+                    <div class="progress-bar">
+                        <div style="width: 95%"></div>
+                    </div>
+                </div>
+                <div>
+                    CSS
+                    <div class="progress-bar">
+                        <div style="width: 90%"></div>
+                    </div>
+                </div>
+                <div>
+                    JavaScript
+                    <div class="progress-bar">
+                        <div style="width: 80%"></div>
+                    </div>
+                </div>
+                <div>
+                    Bootstrap
+                    <div class="progress-bar">
+                        <div style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+
+                    <h3>Portfolio Website</h3>
+                    <p>A clean and responsive personal portfolio website to showcase skills, about me, and contact
+                        information.</p>
+
+                    <div class="tech-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript">
+                    </div>
+
+                </div>
+                <div class="project-card">
+
+                    <h3>Landing Page Design</h3>
+                    <p>A mock landing page for a startup, designed with modern UI principles and responsive layout.</p>
+
+                    <div class="tech-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                    </div>
+
+                </div>
+                <div class="project-card">
+
+                    <h3>Blog Page Concept</h3>
+                    <p>A front-end design for a personal blog, including posts layout and sidebar widgets for
+                        categories.</p>
+
+                    <div class="tech-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+
+    <section id="testimonials" class="testimonials-section">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial active">
+                <p>"Aliyat is a talented developer who delivers clean and responsive designs. Highly recommended!"</p>
+                <h4>- Jane Doe, Designer</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Very dedicated and pays attention to detail. Her work speaks for itself."</p>
+                <h4>- John Smith, Developer</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Working with Aliyat was smooth and professional. Will definitely hire again."</p>
+                <h4>- Lisa Brown, Project Manager</h4>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+
+    <!-- Services -->
+    <section id="services" class="services" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <ul class="service">
+                <li>Responsive Website Design</li>
+                <li>Landing Pages</li>
+                <li>Business or Portfolio Websites</li>
+                <li>Website Maintenance</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <form action="https://formsubmit.co/liyabaealiyat@gmail.com" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>You can reach me via email or WhatsApp</p>
+            <p>Email: <a href="mailto:liyabaealiyat@gmail.com">liyabaealiyat@gmail.com</a></p>
+            <p>Phone/WhatsApp: <a href="tel:+2348160189247">08160189247</a></p>
+        </div>
+    </section>
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2348160189247" target="_blank" class="whatsapp-chat" id="whatsapp-chat">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp"
+            style="width: 24px; height: 24px;">
+        Chat with Me
+    </a>
+
+    <footer>
+
+        <p>&copy; 2025 Sanni Aliyat Semilore. All rights reserved.</p>
+        <div class="footer-icons">
+            <a href="https://wa.me/2348160189247" target="_blank" title="WhatsApp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://www.tiktok.com/@itz-wunmi8" target="_blank" title="TikTok">
+                <img src="./assets/pngwing.com.png" alt="TikTok">
+            </a>
+
+        </div>
+
+
+    </footer>
+
+
+    <!-- Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        // Show/hide button on scroll
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTop");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Scroll to top on click
+        document.getElementById("backToTop").onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+
+
+
+    <script>
+        const toggle = document.getElementById("theme-toggle");
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+
+            // Optionally save user preference
+            if (document.body.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+
+        // Load saved theme on refresh
+        window.addEventListener("load", () => {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark");
+            }
+        });
+    </script>
+
+
+    <script>
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    </script>
+
+
+    <script>
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+
+            // Let users see the welcome message for 3 seconds
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+
+                // Fully hide it after fade out is done
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 1000); // matches the CSS transition duration
+            }, 4000); // changed from 3000 to 4000 (3 seconds)
+        });
+    </script>
+
+
+    <!-- Typing Effect Script -->
+    <script>
+        const texts = [
+            "I build modern, responsive websites",
+            "Passionate about clean and efficient code",
+            "Transforming ideas into digital experiences"
+        ];
+
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+        let isDeleting = false;
+
+        function type() {
+            if (count === texts.length) count = 0;
+            currentText = texts[count];
+
+            if (isDeleting) {
+                letter = currentText.slice(0, --index);
+            } else {
+                letter = currentText.slice(0, ++index);
+            }
+
+            document.getElementById('typed-text').textContent = letter;
+
+            if (!isDeleting && letter.length === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 1000);
+            } else if (isDeleting && letter.length === 0) {
+                isDeleting = false;
+                count++;
+                setTimeout(type, 300);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+
+        window.addEventListener("load", () => {
+            type();
+        });
+    </script>
+
+
+
+
+    <script>
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.dot');
+        let testiminialindex = 0;
+
+        function showTestimonial(i) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            testimonials[i].classList.add('active');
+            dots[i].classList.add('active');
+        }
+
+        function nextTestimonial() {
+            testimonialindex = (testimonialindex + 1) % testimonials.length;
+            showTestimonial(testimonialindex);
+        }
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                testimonialindex = i;
+                showTestimonial(testimonialindex);
+            });
+        });
+
+        setInterval(nextTestimonial, 5000); // 5 seconds
+    </script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+
+
+
+
+</body>
+
+</html>
