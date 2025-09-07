@@ -870,8 +870,9 @@ body {
 /* ===== THEME TOGGLE (fixed, mobile-visible) ===== */
 .theme-toggle {
     position: fixed;
-    top: calc(16px + env(safe-area-inset-top));
-    right: calc(16px + env(safe-area-inset-right));
+    /* Desktop default position */
+    top: 16px;
+    right: 16px;
     z-index: 2000;
     background-color: #0a84ff;
     color: #fff;
@@ -886,6 +887,9 @@ body {
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
     transition: background-color 0.2s ease, transform 0.1s ease;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .theme-toggle:hover { background-color: #0667cc; }
@@ -902,11 +906,25 @@ body.dark .theme-toggle:hover { background-color: #273547; }
 @media (max-width: 768px) {
   .theme-toggle {
     z-index: 3000;
+    /* Mobile default position (bottom-left) */
     top: auto;
     right: auto;
-    left: calc(16px + env(safe-area-inset-left));
-    bottom: calc(80px + env(safe-area-inset-bottom)); /* keep clear of WhatsApp/back-to-top */
+    left: 16px;
+    bottom: 80px; /* keep clear of floating buttons */
   }
+}
+
+/* Prefer safe-area insets when supported */
+@supports (bottom: calc(0px + env(safe-area-inset-bottom))) {
+  .theme-toggle { top: calc(16px + env(safe-area-inset-top)); right: calc(16px + env(safe-area-inset-right)); }
+  @media (max-width: 768px) {
+    .theme-toggle { left: calc(16px + env(safe-area-inset-left)); bottom: calc(80px + env(safe-area-inset-bottom)); }
+  }
+}
+
+/* Very small screens fallback */
+@media (max-width: 360px) {
+  .theme-toggle { left: 12px; bottom: 72px; width: 42px; height: 42px; }
 }
 
 /* ===== CONNECT WITH ME (Social) ===== */
