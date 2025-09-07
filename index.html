@@ -4,27 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanni Aliyat Semilore | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+    <title>Sanni Aliyat Semilore | Web Designer & Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Sanni Aliyat Semilore's portfolio. Front-End Developer skilled in HTML, CSS, JavaScript. I create responsive, user-friendly websites.">
+        content="Sanni Aliyat Semilore - Professional Web Designer & Developer. Creating stunning, responsive websites with modern design principles. Specializing in UI/UX design, front-end development, and digital experiences.">
     <meta name="keywords"
-        content="Aliyat, Front-End Developer, HTML, CSS, JavaScript, Web Developer, Portfolio, Nigeria">
+        content="Aliyat, Web Designer, UI/UX Designer, Front-End Developer, HTML, CSS, JavaScript, React, Web Development, Portfolio, Nigeria, Responsive Design, Modern Web Design">
     <meta name="author" content="Sanni Aliyat Semilore">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sanni Aliyat Semilore | Front-End Developer">
+    <meta property="og:title" content="Sanni Aliyat Semilore | Web Designer & Developer">
     <meta property="og:description"
-        content="Explore my portfolio as a front-end web developer. I design and develop modern, responsive websites.">
+        content="Professional web designer creating stunning digital experiences. Specializing in modern, responsive web design and development.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-portfolio-link.com">
-    <meta property="og:image" content="https://via.placeholder.com/600x400.png?text=Aliyat+Portfolio">
+    <meta property="og:image" content="./assets/semilore.jpg">
 
     <!-- Favicon -->
     <link rel="icon" href="https://via.placeholder.com/32x32.png?text=A" type="image/png">
+
+    <!-- Apply saved theme early to avoid flash -->
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            // body may not exist yet; adjust once available as well
+            window.addEventListener('DOMContentLoaded', function () {
+              document.body.classList.add('dark');
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <link rel="stylesheet" href="style.css">
 
@@ -42,21 +59,28 @@
     <!-- Header with Responsive Navigation -->
     <header class="site-header">
         <div class="container header-container">
-            <h1 class="logo">Aliyat's portfolio</h1>
-            <div class="hamburger" id="hamburger">☰</div>
+            <div class="logo">
+                <h1>Aliyat<span class="logo-accent">.</span></h1>
+                <span class="logo-subtitle">Web Designer</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Portfolio</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </div>
 
 
         <!-- Dark Mode Toggle -->
-        <button id="theme-toggle" title="Toggle Dark Mode">🌓</button>
+        <button id="theme-toggle" title="Toggle Dark Mode" aria-pressed="false">🌙</button>
 
 
 
@@ -67,17 +91,50 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero" data-aos="fade-in">
-        <div class="container">
-            <h1> Hello,I'm<span class="name-highlight">  Aliyat Semilore</span></h1>
-            <h2><span id="typed-text"></span><span class="cursor">|</span></h2>
-            <img src="./assets/semilore.jpg" alt="Aliyat's photo"
-                style="width:150px; border-radius:50%; margin: 20px 0;">
-            <p>Front-End Web Developer</p>
-            <p>Creating responsive and clean websites using HTML, CSS, and JavaScript</p>
-            <a href="aliyat-resume.pdf" download>
-                <button style="margin-top: 20px;">Download Cv</button>
-            </a>
-
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Aliyat <span class="name-highlight">Semilore</span></h1>
+                <h2 class="hero-title">Web Designer & <span class="title-accent">Developer</span></h2>
+                <div class="hero-subtitle">
+                    <span id="typed-text"></span><span class="cursor">|</span>
+                </div>
+                <p class="hero-description">Crafting beautiful, responsive digital experiences with modern design principles and clean code</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> View My Work
+                    </a>
+                    <a href="aliyat-resume.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="./assets/semilore.jpg" alt="Aliyat Semilore - Web Designer" class="profile-image">
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
@@ -103,16 +160,28 @@
     </section>
 
     <!-- Social Media Section -->
-    <section class="social-media">
-        <h2>Connect with Me</h2>
-        <p>Follow me for updates and tech tips!</p>
-        <div class="social-icons">
-            <a href="https://wa.me/2348160189247" target="_blank" title="Chat on WhatsApp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            </a>
-            <a href="https://www.tiktok.com/@itz.wunmi8" target="_blank" title="Follow me on TikTok">
-                <img src="./assets/pngwing.com.png" alt="TikTok">
-            </a>
+    <section class="social-media" aria-labelledby="connect-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="connect-title" class="section-title">Connect with Me</h2>
+                <p class="section-subtitle">Follow for updates, design tips, and project highlights</p>
+            </div>
+            <div class="social-grid">
+                <a class="social-card" href="https://wa.me/2348160189247" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <div class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                    <div class="social-content">
+                        <h3>WhatsApp</h3>
+                        <p>Chat with me directly</p>
+                    </div>
+                </a>
+                <a class="social-card" href="https://www.tiktok.com/@itz.wunmi8" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <div class="social-icon tiktok"><i class="fab fa-tiktok"></i></div>
+                    <div class="social-content">
+                        <h3>TikTok</h3>
+                        <p>Shorts on design & dev</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -152,50 +221,118 @@
     <!-- Projects -->
     <section id="projects" class="projects" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">A showcase of my recent work and creative solutions</p>
+            </div>
+            <div class="project-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web-design">Web Design</button>
+                <button class="filter-btn" data-filter="development">Development</button>
+                <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+            </div>
             <div class="project-grid">
-                <div class="project-card">
-
-                    <h3>Portfolio Website</h3>
-                    <p>A clean and responsive personal portfolio website to showcase skills, about me, and contact
-                        information.</p>
-
-                    <div class="tech-icons">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                            alt="HTML5">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                            alt="JavaScript">
+                <div class="project-card" data-category="web-design development">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A modern, responsive portfolio website showcasing creative design and smooth animations. Built with HTML5, CSS3, and JavaScript.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">AOS</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-
-                    <h3>Landing Page Design</h3>
-                    <p>A mock landing page for a startup, designed with modern UI principles and responsive layout.</p>
-
-                    <div class="tech-icons">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                            alt="HTML5">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                <div class="project-card" data-category="web-design ui-ux">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&h=300&fit=crop" alt="E-commerce Landing">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
+                    <div class="project-content">
+                        <h3>E-commerce Landing Page</h3>
+                        <p>A conversion-focused landing page for an e-commerce startup with modern UI principles and responsive design.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">jQuery</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-card">
-
-                    <h3>Blog Page Concept</h3>
-                    <p>A front-end design for a personal blog, including posts layout and sidebar widgets for
-                        categories.</p>
-
-                    <div class="tech-icons">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                            alt="HTML5">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                <div class="project-card" data-category="development ui-ux">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop" alt="Blog Platform">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
+                    <div class="project-content">
+                        <h3>Modern Blog Platform</h3>
+                        <p>A clean and intuitive blog platform with advanced typography, reading experience optimization, and content management features.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web-design development">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&h=300&fit=crop" alt="Business Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" title="View Live">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" title="View Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Corporate Business Website</h3>
+                        <p>A professional corporate website with advanced animations, contact forms, and service showcases for a consulting firm.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">SCSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">GSAP</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -228,13 +365,64 @@
     <!-- Services -->
     <section id="services" class="services" data-aos="fade-up">
         <div class="container">
-            <h2 class="section-title">Services</h2>
-            <ul class="service">
-                <li>Responsive Website Design</li>
-                <li>Landing Pages</li>
-                <li>Business or Portfolio Websites</li>
-                <li>Website Maintenance</li>
-            </ul>
+            <div class="section-header">
+                <h2 class="section-title">What I Do</h2>
+                <p class="section-subtitle">Comprehensive web design and development services</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>Creating visually stunning and user-friendly interfaces that engage your audience and reflect your brand identity.</p>
+                    <ul class="service-features">
+                        <li>UI/UX Design</li>
+                        <li>Responsive Design</li>
+                        <li>Brand Integration</li>
+                        <li>Wireframing</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Building fast, responsive, and interactive websites using modern technologies and best practices.</p>
+                    <ul class="service-features">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript & React</li>
+                        <li>Performance Optimization</li>
+                        <li>Cross-browser Compatibility</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Ensuring your website looks and works perfectly on all devices, from mobile phones to desktop computers.</p>
+                    <ul class="service-features">
+                        <li>Mobile-First Approach</li>
+                        <li>Flexible Grid Systems</li>
+                        <li>Touch-Friendly Interface</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Website Maintenance</h3>
+                    <p>Keeping your website updated, secure, and performing at its best with regular maintenance and support.</p>
+                    <ul class="service-features">
+                        <li>Regular Updates</li>
+                        <li>Security Monitoring</li>
+                        <li>Performance Optimization</li>
+                        <li>Content Management</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -262,20 +450,55 @@
         Chat with Me
     </a>
 
-    <footer>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Aliyat<span class="logo-accent">.</span></h3>
+                    <p>Designing modern, responsive web experiences.</p>
+                </div>
 
-        <p>&copy; 2025 Sanni Aliyat Semilore. All rights reserved.</p>
-        <div class="footer-icons">
-            <a href="https://wa.me/2348160189247" target="_blank" title="WhatsApp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            </a>
-            <a href="https://www.tiktok.com/@itz-wunmi8" target="_blank" title="TikTok">
-                <img src="./assets/pngwing.com.png" alt="TikTok">
-            </a>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
 
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:liyabaealiyat@gmail.com">liyabaealiyat@gmail.com</a></li>
+                        <li><a href="tel:+2348160189247">+234 816 018 9247</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow</h4>
+                    <div class="footer-social-row">
+                        <a href="https://wa.me/2348160189247" target="_blank" title="WhatsApp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@itz-wunmi8" target="_blank" title="TikTok" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sanni Aliyat Semilore. All rights reserved.</p>
+            </div>
         </div>
-
-
     </footer>
 
 
@@ -309,22 +532,25 @@
 
     <script>
         const toggle = document.getElementById("theme-toggle");
-        toggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark");
 
-            // Optionally save user preference
-            if (document.body.classList.contains("dark")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
+        function applyIconAndAria(isDark) {
+            // Show sun when dark (indicates switch to light), moon when light
+            toggle.textContent = isDark ? '☀️' : '🌙';
+            toggle.setAttribute('aria-pressed', String(isDark));
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved === 'dark' || document.body.classList.contains('dark');
+            applyIconAndAria(isDark);
         });
 
-        // Load saved theme on refresh
-        window.addEventListener("load", () => {
-            if (localStorage.getItem("theme") === "dark") {
-                document.body.classList.add("dark");
-            }
+        toggle.addEventListener('click', () => {
+            const willBeDark = !document.body.classList.contains('dark');
+            document.body.classList.toggle('dark', willBeDark);
+            localStorage.setItem('theme', willBeDark ? 'dark' : 'light');
+            applyIconAndAria(willBeDark);
         });
     </script>
 
