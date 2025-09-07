@@ -520,7 +520,7 @@ textarea:focus {
 /* Dark mode styles */
 body.dark {
     background-color: #121212;
-    color: #eaeaea;
+    color: black;
 }
 
 body.dark .about-content,
