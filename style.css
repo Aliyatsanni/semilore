@@ -577,6 +577,10 @@ body.dark .projects .section-title {
     color: white;
 }
 
+body.dark .site-header{
+    color: black;
+}
+
 /*preloader*/
 #preloader {
     position: fixed;
