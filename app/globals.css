@@ -867,6 +867,48 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* ===== THEME TOGGLE (fixed, mobile-visible) ===== */
+.theme-toggle {
+    position: fixed;
+    top: calc(16px + env(safe-area-inset-top));
+    right: calc(16px + env(safe-area-inset-right));
+    z-index: 2000;
+    background-color: #0a84ff;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.theme-toggle:hover { background-color: #0667cc; }
+.theme-toggle:active { transform: scale(0.98); }
+
+/* Dark mode button color */
+body.dark .theme-toggle {
+    background-color: #1f2937;
+    color: #eaeaea;
+}
+body.dark .theme-toggle:hover { background-color: #273547; }
+
+/* Ensure it doesn’t get covered by headers on mobile */
+@media (max-width: 768px) {
+  .theme-toggle {
+    z-index: 3000;
+    top: auto;
+    right: auto;
+    left: calc(16px + env(safe-area-inset-left));
+    bottom: calc(80px + env(safe-area-inset-bottom)); /* keep clear of WhatsApp/back-to-top */
+  }
+}
+
 /* ===== CONNECT WITH ME (Social) ===== */
 .social-media {
     text-align: center;
