@@ -4,25 +4,16 @@ import { useState, useEffect } from 'react'
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false)
-  const [palette, setPalette] = useState<'default' | 'purple'>('default')
 
   useEffect(() => {
-    // Apply saved theme & palette
+    // Apply saved theme only
     const savedTheme = localStorage.getItem('theme')
-    const savedPalette = (localStorage.getItem('palette') as 'default' | 'purple') || 'default'
 
     if (savedTheme === 'dark') {
       setIsDark(true)
       document.body.classList.add('dark')
     } else {
       document.body.classList.remove('dark')
-    }
-
-    setPalette(savedPalette)
-    if (savedPalette === 'purple') {
-      document.body.classList.add('purple')
-    } else {
-      document.body.classList.remove('purple')
     }
   }, [])
 
@@ -38,17 +29,6 @@ export default function ThemeToggle() {
     }
   }
 
-  const togglePalette = () => {
-    const next = palette === 'default' ? 'purple' : 'default'
-    setPalette(next)
-    if (next === 'purple') {
-      document.body.classList.add('purple')
-    } else {
-      document.body.classList.remove('purple')
-    }
-    localStorage.setItem('palette', next)
-  }
-
   return (
     <>
       <button
@@ -58,15 +38,7 @@ export default function ThemeToggle() {
         title="Toggle Dark Mode"
         aria-label="Toggle dark mode"
       >
-        {isDark ? '☀️' : '🌓'}
-      </button>
-      <button
-        className="theme-palette"
-        onClick={togglePalette}
-        title="Switch theme palette"
-        aria-label="Switch theme palette"
-      >
-        🎨
+        {isDark ? '☀️' : '🌙'}
       </button>
     </>
   )
