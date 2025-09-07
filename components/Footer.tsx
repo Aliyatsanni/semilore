@@ -43,7 +43,7 @@ export default function Footer() {
               <a href="https://www.tiktok.com/@itz.wunmi8" target="_blank" rel="noopener noreferrer" title="TikTok">
                 <i className="fab fa-tiktok"></i>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <a href="https://github.com/Aliyatsanni/semilore" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub repository: Aliyatsanni/semilore">
                 <i className="fab fa-github"></i>
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn">
