@@ -867,6 +867,84 @@ body {
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* ===== CONNECT WITH ME (Social) ===== */
+.social-media {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.social-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.social-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.social-icon.whatsapp { background: #25D366; }
+.social-icon.tiktok {
+    background: radial-gradient(circle at 30% 30%, #25f4ee, transparent 35%),
+                radial-gradient(circle at 70% 70%, #fe2c55, transparent 35%),
+                #000000;
+}
+
+.social-content h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.social-content p {
+    margin: 0.2rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Dark mode adjustments */
+body.dark .social-media { background: #121212; color: var(--text-primary); }
+body.dark .social-card {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+    box-shadow: none;
+}
+body.dark .social-card:hover { border-color: #3a3a3a; }
+body.dark .social-content h3 { color: #eaeaea; }
+body.dark .social-content p { color: #b3b3b3; }
+
 /* ===== UTILITY COMPONENTS ===== */
 .preloader {
     position: fixed;

@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import Social from '@/components/Social'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Services from '@/components/Services'
@@ -31,6 +32,7 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <Social />
       <Skills />
       <Projects />
       <Services />
