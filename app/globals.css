@@ -20,35 +20,35 @@ body {
 }
 
 /* Use a dark gradient tint for hero/page in dark mode */
-body.dark .hero {
+html.dark .hero {
     background: linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(24, 24, 24, 0.95) 100%);
 }
 
 /* Header dark treatment */
-body.dark .site-header {
+html.dark .site-header {
     background: rgba(18, 18, 18, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-body.dark .hamburger span { background: var(--text-primary); }
-body.dark .nav-link { color: var(--text-primary); }
-body.dark .nav-links { background: rgba(18, 18, 18, 0.95); }
+html.dark .hamburger span { background: var(--text-primary); }
+html.dark .nav-link { color: var(--text-primary); }
+html.dark .nav-links { background: rgba(18, 18, 18, 0.95); }
 
 /* Cards/sections already use variables; ensure hero/about/skills/projects/services/testimonials/contact pick dark vars */
-body.dark .about,
-body.dark .projects,
-body.dark .testimonials-section {
+html.dark .about,
+html.dark .projects,
+html.dark .testimonials-section {
     background: var(--bg-primary);
 }
-body.dark .skills,
-body.dark .contact { background: var(--bg-secondary); }
+html.dark .skills,
+html.dark .contact { background: var(--bg-secondary); }
 
 /* Footer dark background */
-body.dark .footer {
+html.dark .footer {
     background: #0f0f0f;
     color: #eaeaea;
 }
-body.dark .footer-section a { color: rgba(234, 234, 234, 0.85); }
-body.dark .footer-section a:hover { color: #ffffff; }
+html.dark .footer-section a { color: rgba(234, 234, 234, 0.85); }
+html.dark .footer-section a:hover { color: #ffffff; }
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -71,7 +71,7 @@ body.dark .footer-section a:hover { color: #ffffff; }
 }
 
 /* Dark mode: override CSS variables and backgrounds for full contrast */
-body.dark {
+html.dark {
     --text-primary: #eaeaea;
     --text-secondary: #b3b3b3;
     --text-light: #9ca3af;
@@ -940,11 +940,11 @@ body.dark {
 .theme-toggle:active { transform: scale(0.98); }
 
 /* Dark mode button color */
-body.dark .theme-toggle {
+html.dark .theme-toggle {
     background-color: #1f2937;
     color: #eaeaea;
 }
-body.dark .theme-toggle:hover { background-color: #273547; }
+html.dark .theme-toggle:hover { background-color: #273547; }
 
 /* (Removed) Palette button and purple palette overrides */
 
@@ -1041,15 +1041,15 @@ body.dark .theme-toggle:hover { background-color: #273547; }
 }
 
 /* Dark mode adjustments */
-body.dark .social-media { background: #121212; color: var(--text-primary); }
-body.dark .social-card {
+html.dark .social-media { background: #121212; color: var(--text-primary); }
+html.dark .social-card {
     background: #1a1a1a;
     border-color: #2a2a2a;
     box-shadow: none;
 }
-body.dark .social-card:hover { border-color: #3a3a3a; }
-body.dark .social-content h3 { color: #eaeaea; }
-body.dark .social-content p { color: #b3b3b3; }
+html.dark .social-card:hover { border-color: #3a3a3a; }
+html.dark .social-content h3 { color: #eaeaea; }
+html.dark .social-content p { color: #b3b3b3; }
 
 /* ===== UTILITY COMPONENTS ===== */
 .preloader {
