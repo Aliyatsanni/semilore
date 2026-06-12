@@ -98,7 +98,7 @@ body.dark {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgb(221, 234, 238);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
@@ -727,6 +727,9 @@ body.dark {
     text-align: center;
     padding: 60px 20px;
 }
+body.dark .contact.form{
+    background-color: grey;
+}
 
 ul {
     list-style-type: none;
@@ -734,13 +737,18 @@ ul {
 }
 
 a {
-    color: #0a84ff;
+    color: white;
     text-decoration: none;
 }
 
-a:hover {
-    color: #0667cc;
+p{
+    color: #000000;
 }
+
+a:hover {
+    color: black
+}
+
 
 /* More legible link color in dark mode */
 body.dark a {
@@ -748,6 +756,9 @@ body.dark a {
 }
 body.dark a:hover {
     color: #b3e0ff;
+}
+body.dark p{
+    color:white ;
 }
 
 footer {
@@ -842,6 +853,10 @@ body:not(.dark) .site-footer a:hover { color: #b3e0ff; }
 body.dark .site-footer {
     background: #0b1117;
     color: var(--text-primary);
+}
+
+body.dark .whatsapp-chat{
+    color: rgb(255, 255, 255);
 }
 body.dark .site-footer h4,
 body.dark .site-footer .footer-brand h3 { color: #eaeaea; }
@@ -1126,6 +1141,9 @@ body.dark .social-card:hover { border-color: #3a3a3a; }
 body.dark .social-content h3 { color: #eaeaea; }
 body.dark .social-content p { color: #b3b3b3; }
 
+body.dark .testimonial p{color: white;}
+
+
 #backToTop {
 
     position: fixed;
@@ -1355,7 +1373,11 @@ body.dark .dot { background: #2a2a2a; }
 body.dark .dot.active { background: #0a84ff; }
 
 /* WhatsApp button */
-body.dark .whatsapp-chat { box-shadow: 0 6px 20px rgba(0,0,0,0.5); }
+body.dark .whatsapp-chat { 
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    color: black;
+}
 
 /* Footer */
 body.dark footer {
@@ -1434,5 +1456,29 @@ body.dark #preloader {
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+/*chatgpt style for contact */
+
+
+@media (prefers-color-scheme: dark) {
+    .contact form {
+        background: rgba(255, 255, 255, 0.1); /* dim background */
+        backdrop-filter: blur(6px);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .contact input,
+    .contact textarea {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact button {
+        background: #fff;
+        color: #000;
     }
 }
