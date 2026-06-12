@@ -1,6 +1,5 @@
 'use client'
 
-
 export default function Footer() {
   return (
     <footer className="footer">
@@ -12,7 +11,7 @@ export default function Footer() {
               <p>Creating beautiful digital experiences</p>
             </div>
           </div>
-          
+
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
@@ -23,7 +22,7 @@ export default function Footer() {
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          
+
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
@@ -33,7 +32,7 @@ export default function Footer() {
               <li>Website Maintenance</li>
             </ul>
           </div>
-          
+
           <div className="footer-section">
             <h4>Connect</h4>
             <div className="footer-social">
@@ -52,7 +51,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <p>&copy; 2025 Sanni Aliyat Semilore. All rights reserved.</p>
         </div>

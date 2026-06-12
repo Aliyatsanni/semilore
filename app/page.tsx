@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -14,18 +13,8 @@ import Footer from '@/components/Footer'
 import Preloader from '@/components/Preloader'
 import WhatsAppChat from '@/components/WhatsAppChat'
 import BackToTop from '@/components/BackToTop'
-import ThemeToggle from '@/components/ThemeToggle'
 
 export default function Home() {
-  useEffect(() => {
-    // Initialize AOS
-    const AOS = require('aos')
-    AOS.init({
-      duration: 1000,
-      once: true,
-    })
-  }, [])
-
   return (
     <main>
       <Preloader />
@@ -41,7 +30,6 @@ export default function Home() {
       <Footer />
       <WhatsAppChat />
       <BackToTop />
-      <ThemeToggle />
     </main>
   )
 }

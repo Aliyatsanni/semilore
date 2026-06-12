@@ -1,23 +1,21 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Button from './ui/Button'
+import StatCard from './ui/StatCard'
+import { heroStats, typingTexts } from '@/data/hero'
 
 export default function Hero() {
   const [currentText, setCurrentText] = useState('')
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
 
-  const texts = [
-    "I build modern, responsive websites",
-    "Passionate about clean and efficient code",
-    "Transforming ideas into digital experiences"
-  ]
-
   useEffect(() => {
     const timeout = setTimeout(() => {
-      const current = texts[currentIndex]
-      
+      const current = typingTexts[currentIndex]
+
       if (isDeleting) {
         setCurrentText(current.substring(0, currentText.length - 1))
       } else {
@@ -28,66 +26,118 @@ export default function Hero() {
         setTimeout(() => setIsDeleting(true), 1000)
       } else if (isDeleting && currentText === '') {
         setIsDeleting(false)
-        setCurrentIndex((prev) => (prev + 1) % texts.length)
+        setCurrentIndex((prev) => (prev + 1) % typingTexts.length)
       }
     }, isDeleting ? 50 : 100)
 
     return () => clearTimeout(timeout)
-  }, [currentText, currentIndex, isDeleting, texts])
+  }, [currentText, currentIndex, isDeleting])
 
   return (
-    <section id="hero" className="hero" data-aos="fade-in">
+    <motion.section
+      id="hero"
+      className="hero"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="hero-background">
         <div className="hero-particles"></div>
       </div>
       <div className="container hero-content">
-        <div className="hero-text">
-          <p className="hero-greeting">Hello, I'm</p>
-          <h1 className="hero-name">Aliyat <span className="name-highlight">Semilore</span></h1>
-          <h2 className="hero-title">Web Designer & <span className="title-accent">Developer</span></h2>
-          <div className="hero-subtitle">
+        <motion.div
+          className="hero-text"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.p
+            className="hero-greeting"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Hello, I'm
+          </motion.p>
+          <motion.h1
+            className="hero-name"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Aliyat <span className="name-highlight">Semilore</span>
+          </motion.h1>
+          <motion.h2
+            className="hero-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            Web Designer & <span className="title-accent">Developer</span>
+          </motion.h2>
+          <motion.div
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <span>{currentText}</span><span className="cursor">|</span>
-          </div>
-          <p className="hero-description">
+          </motion.div>
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
             Crafting beautiful, responsive digital experiences with modern design principles and clean code
-          </p>
-          <div className="hero-buttons">
-            <a href="#projects" className="btn btn-primary">
+          </motion.p>
+          <motion.div
+            className="hero-buttons"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <Button href="#projects" variant="primary">
               <i className="fas fa-eye"></i> View My Work
-            </a>
-            <a href="/aliyat-resume.pdf" download className="btn btn-secondary">
+            </Button>
+            <Button href="/aliyat-resume.pdf" download variant="secondary">
               <i className="fas fa-download"></i> Download CV
-            </a>
-          </div>
+            </Button>
+          </motion.div>
           <div className="hero-stats">
-            <div className="stat">
-              <span className="stat-number">50+</span>
-              <span className="stat-label">Projects</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">3+</span>
-              <span className="stat-label">Years Experience</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Client Satisfaction</span>
-            </div>
+            {heroStats.map((stat, index) => (
+              <StatCard
+                key={stat.label}
+                number={stat.number}
+                label={stat.label}
+                delay={0.9 + index * 0.1}
+              />
+            ))}
           </div>
-        </div>
-        <div className="hero-image">
-          <div className="image-container">
-            <Image 
-              src="/assets/semilore.jpg" 
-              alt="Aliyat Semilore - Web Designer" 
+        </motion.div>
+        <motion.div
+          className="hero-image"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <motion.div
+            className="image-container"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <Image
+              src="/assets/semilore.jpg"
+              alt="Aliyat Semilore - Web Designer"
               className="profile-image"
               width={350}
               height={350}
               priority
             />
             <div className="image-decoration"></div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

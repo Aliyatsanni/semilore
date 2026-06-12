@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* ===== CSS RESET & BASE STYLES ===== */
 * {
     margin: 0;
@@ -29,9 +31,18 @@ html.dark .site-header {
     background: rgba(18, 18, 18, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
-html.dark .hamburger span { background: var(--text-primary); }
-html.dark .nav-link { color: var(--text-primary); }
-html.dark .nav-links { background: rgba(18, 18, 18, 0.95); }
+
+html.dark .hamburger span {
+    background: var(--text-primary);
+}
+
+html.dark .nav-link {
+    color: var(--text-primary);
+}
+
+html.dark .nav-links {
+    background: rgba(18, 18, 18, 0.95);
+}
 
 /* Cards/sections already use variables; ensure hero/about/skills/projects/services/testimonials/contact pick dark vars */
 html.dark .about,
@@ -39,16 +50,25 @@ html.dark .projects,
 html.dark .testimonials-section {
     background: var(--bg-primary);
 }
+
 html.dark .skills,
-html.dark .contact { background: var(--bg-secondary); }
+html.dark .contact {
+    background: var(--bg-secondary);
+}
 
 /* Footer dark background */
 html.dark .footer {
     background: #0f0f0f;
     color: #eaeaea;
 }
-html.dark .footer-section a { color: rgba(234, 234, 234, 0.85); }
-html.dark .footer-section a:hover { color: #ffffff; }
+
+html.dark .footer-section a {
+    color: rgba(234, 234, 234, 0.85);
+}
+
+html.dark .footer-section a:hover {
+    color: #ffffff;
+}
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -168,6 +188,16 @@ html.dark {
     display: flex;
     gap: 2rem;
     list-style: none;
+}
+
+.nav-links.desktop {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .nav-links.desktop {
+        display: none;
+    }
 }
 
 .nav-link {
@@ -911,66 +941,26 @@ html.dark {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* ===== THEME TOGGLE (fixed, mobile-visible) ===== */
-.theme-toggle {
-    position: fixed;
-    /* Desktop default position */
-    top: 16px;
-    right: 16px;
-    z-index: 2000;
-    background-color: #0a84ff;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: inline-flex;
+/* ===== NAV THEME TOGGLE ===== */
+.nav-theme-toggle {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
 }
 
-.theme-toggle:hover { background-color: #0667cc; }
-.theme-toggle:active { transform: scale(0.98); }
-
-/* Dark mode button color */
-html.dark .theme-toggle {
-    background-color: #1f2937;
-    color: #eaeaea;
+/* ===== LAYOUT THEME TOGGLE (bottom-left) ===== */
+.layout-theme-toggle {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 50;
 }
-html.dark .theme-toggle:hover { background-color: #273547; }
 
-/* (Removed) Palette button and purple palette overrides */
-
-/* Ensure it doesn’t get covered by headers on mobile */
 @media (max-width: 768px) {
-  .theme-toggle {
-    z-index: 3000;
-    /* Mobile default position (bottom-left) */
-    top: auto;
-    right: auto;
-    left: 16px;
-    bottom: 80px; /* keep clear of floating buttons */
-  }
-}
 
-/* Prefer safe-area insets when supported */
-@supports (bottom: calc(0px + env(safe-area-inset-bottom))) {
-  .theme-toggle { top: calc(16px + env(safe-area-inset-top)); right: calc(16px + env(safe-area-inset-right)); }
-  @media (max-width: 768px) {
-    .theme-toggle { left: calc(16px + env(safe-area-inset-left)); bottom: calc(80px + env(safe-area-inset-bottom)); }
-  }
-}
-
-/* Very small screens fallback */
-@media (max-width: 360px) {
-  .theme-toggle { left: 12px; bottom: 72px; width: 42px; height: 42px; }
+    /* Hide the fixed theme toggle on mobile since it's in the nav */
+    .layout-theme-toggle {
+        display: none;
+    }
 }
 
 /* ===== CONNECT WITH ME (Social) ===== */
@@ -1021,11 +1011,14 @@ html.dark .theme-toggle:hover { background-color: #273547; }
     font-size: 1.25rem;
 }
 
-.social-icon.whatsapp { background: #25D366; }
+.social-icon.whatsapp {
+    background: #25D366;
+}
+
 .social-icon.tiktok {
     background: radial-gradient(circle at 30% 30%, #25f4ee, transparent 35%),
-                radial-gradient(circle at 70% 70%, #fe2c55, transparent 35%),
-                #000000;
+        radial-gradient(circle at 70% 70%, #fe2c55, transparent 35%),
+        #000000;
 }
 
 .social-content h3 {
@@ -1041,15 +1034,28 @@ html.dark .theme-toggle:hover { background-color: #273547; }
 }
 
 /* Dark mode adjustments */
-html.dark .social-media { background: #121212; color: var(--text-primary); }
+html.dark .social-media {
+    background: #121212;
+    color: var(--text-primary);
+}
+
 html.dark .social-card {
     background: #1a1a1a;
     border-color: #2a2a2a;
     box-shadow: none;
 }
-html.dark .social-card:hover { border-color: #3a3a3a; }
-html.dark .social-content h3 { color: #eaeaea; }
-html.dark .social-content p { color: #b3b3b3; }
+
+html.dark .social-card:hover {
+    border-color: #3a3a3a;
+}
+
+html.dark .social-content h3 {
+    color: #eaeaea;
+}
+
+html.dark .social-content p {
+    color: #b3b3b3;
+}
 
 /* ===== UTILITY COMPONENTS ===== */
 .preloader {
@@ -1141,51 +1147,67 @@ html.dark .social-content p { color: #b3b3b3; }
     box-shadow: var(--shadow-lg);
 }
 
-.theme-toggle {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: var(--bg-primary);
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    z-index: 999;
-    box-shadow: var(--shadow-md);
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: var(--shadow-lg);
-}
-
 /* ===== ANIMATIONS ===== */
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -1193,8 +1215,8 @@ html.dark .social-content p { color: #b3b3b3; }
     .hamburger {
         display: flex;
     }
-    
-    .nav-links {
+
+    .nav-links:not(.desktop) {
         display: none;
         flex-direction: column;
         gap: 1rem;
@@ -1207,54 +1229,54 @@ html.dark .social-content p { color: #b3b3b3; }
         padding: 2rem;
         border-top: 1px solid var(--border-color);
     }
-    
+
     .nav-links.show {
         display: flex;
     }
-    
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
     }
-    
+
     .hero-name {
         font-size: 2.5rem;
     }
-    
+
     .hero-title {
         font-size: 1.8rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .hero-stats {
         justify-content: center;
     }
-    
+
     .image-container {
         width: 250px;
         height: 250px;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .services-grid,
     .project-grid,
     .skills-content {
         grid-template-columns: 1fr;
     }
-    
+
     .section-title {
         font-size: 2.5rem;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1265,39 +1287,39 @@ html.dark .social-content p { color: #b3b3b3; }
     .container {
         padding: 0 1rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .hero-name {
         font-size: 2rem;
     }
-    
+
     .hero-title {
         font-size: 1.5rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     .hero-stats {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .project-filter {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .filter-btn {
         width: 200px;
     }

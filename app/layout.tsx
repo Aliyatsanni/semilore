@@ -4,12 +4,12 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import ThemeToggle from '@/components/ThemeToggle'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 })
 
-const playfair = Playfair_Display({ 
+const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
 })
@@ -50,13 +50,12 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} bg-white dark:bg-gray-900 transition-colors duration-200`}>
-        <div className="fixed top-4 right-4 z-50">
+        {children}
+        <div className="layout-theme-toggle">
           <ThemeToggle />
         </div>
-        {children}
       </body>
     </html>
   )
